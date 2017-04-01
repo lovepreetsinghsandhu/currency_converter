@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <link href="index.css" type="text/css" />
+
+        <script src="angular.min.js" type="text/javascript"></script>
+        <script src="index.js" type="text/javascript"></script>
+    </head>
+
+    <body ng-controller="myCtrl">
+        From:<br>
+        <select ng-model="fromCurrency">
+            <option>{{rates.base}}</option>
+            <option ng-repeat="(currency, value) in rates.rates">{{currency}}</option>
+        </select>
+        <input type="text" ng-model="valFrom" />
+
+        <br><br>
+
+        To:<br>
+        <select ng-model="toCurrency">
+            <option>{{rates.base}}</option>
+            <option ng-repeat="(currency, value) in rates.rates">{{currency}}</option>
+        </select>
+        <input type="text" ng-model="convert();" />
+    </body>
+</html>
